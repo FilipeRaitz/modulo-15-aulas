@@ -1,0 +1,87 @@
+@use 'config/reset';
+@use 'config/variaveis';
+@use 'sass:math';
+
+@mixin elementoForm() {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+@function pixelParaEm($alvoEmPixel, $contextoEmPixel: 16px) {
+    @return math.div($alvoEmPixel , $contextoEmPixel)+em;
+
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    padding: 1rem 0;
+    background-color: variaveis.$corPrincipal;
+    text-align: center;
+    color: white;
+}
+
+.form-container {
+    height: calc(100vh - 74.4px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 760px;
+
+    h2 {
+        font-size: pixelParaEm(40px);
+        text-align: center;
+    }
+
+    form {
+        max-width: 480px;
+        width: 100%;
+        margin-top: 2.5rem;
+
+        label {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        input {
+            @include elementoForm();
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid variaveis.$corPrincipal;
+            outline: 2px solid variaveis.$corSecundaria;
+            border-radius: .5em
+        }
+
+        button {
+            @include elementoForm();
+            background-color: variaveis.$corPrincipal;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            color: white;
+
+            &:hover{
+                background-color: darken(variaveis.$corPrincipal, 5%);
+            }
+        }
+    }
+}
+
+@media screen and (width <= variaveis.$mobile) {
+    .container {
+        max-width: 80%;
+    }
+}

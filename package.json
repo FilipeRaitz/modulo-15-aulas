@@ -1,0 +1,23 @@
+{
+  "name": "modulo-15-aulas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass source/main.scss build/main.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilipeRaitz/modulo-15-aulas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FilipeRaitz/modulo-15-aulas/issues"
+  },
+  "homepage": "https://github.com/FilipeRaitz/modulo-15-aulas#readme",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  }
+}
